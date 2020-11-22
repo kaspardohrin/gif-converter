@@ -1,0 +1,28 @@
+.questions-display-container {
+    display: block;
+
+    display: flex;
+
+    flex-direction: column;
+
+    height: calc(100vh - 44px);
+
+    overflow-y: scroll;
+
+    border: 1px solid #3f3f3f80;
+
+    background-color: #ffffff;
+
+    box-shadow: 0 1px 3px 1px #1f1f1f40;
+
+    padding: 5px 15px;
+    margin: 5px;
+
+    & h3 {
+        margin: 5px 0 15px 0;
+    }
+
+    & ul {
+        padding-left: 20px;
+    }
+}

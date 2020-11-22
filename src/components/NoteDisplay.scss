@@ -1,0 +1,84 @@
+.notes-display-container {
+    display: block;
+
+    ul {
+        display: flex;
+
+        flex-direction: column;
+
+        height: calc(100vh - 189px);
+
+        overflow-y: scroll;
+
+        background-color: #f8f8f8;
+
+        box-shadow: 0 1px 3px 1px #1f1f1f40;
+
+        border: 1px solid #3f3f3f80;
+
+        padding: 0 5px 0 5px;
+        margin: 0;
+
+        li {
+            display: inline;
+
+            list-style: none;
+
+            text-overflow: ellipsis;
+            word-wrap: break-word;
+
+            margin: 5px 0 5px 0;
+
+            padding: 2px 2px 2px 5px;
+
+            background-color: #ffffff;
+
+            border: 1px solid #3f3f3f80;
+
+            box-shadow: 0 1px 3px 1px #1f1f1f40;
+
+            & span {
+                display: flex;
+                flex-direction: column;
+
+                padding: 10px 5px 0 0;
+
+                text-align: left;
+                font-size: x-small;
+                color: #3f3f3f80;
+            }
+
+            & button {
+                border: unset;
+
+                position: relative;
+
+                float: right;
+
+                color: #9f9f9f;
+
+                padding: 0 4px;
+                margin: 2px 2px 0 0;
+
+                background-color: white;
+
+                transition: box-shadow 0.2s ease-out;
+
+                cursor: pointer;
+
+                &:hover {
+                    box-shadow: -1px 1px 0px red;
+
+                    transition: box-shadow 0.2s ease-in;
+                }
+                &:active {
+                    border: none;
+
+                    border-radius: unset;
+
+                    box-shadow: -1px 1px 0px red;
+                }
+            }
+        }
+    }
+}

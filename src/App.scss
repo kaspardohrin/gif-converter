@@ -1,0 +1,71 @@
+.App {
+  height: 100vh;
+
+  display: flex;
+
+  background-color: #cad6ec;
+
+  .side-panel-container {
+    width: 60px;
+
+    background-color: #f9f9f9;
+
+    padding: 2px;
+
+    border: 10px solid #cad6ec;
+
+    box-shadow: inset 0px 0px 0px 1px black;
+
+    box-sizing: border-box;
+
+    & button {
+      width: 34px;
+      height: 34px;
+
+      padding: 1px;
+
+      margin-bottom: 2px;
+
+      background-color: white;
+
+      font-size: 25px;
+    }
+
+    & .sticky-note {
+      color: #ffd61f;
+    }
+    & .question-mark {
+      color: #999999;
+    }
+  }
+
+  .notes-container {
+    height: fit-content;
+    width: 45vw;
+
+    min-width: 400px;
+    max-width: 750px;
+
+    padding: 10px 0;
+
+    z-index: 1;
+  }
+
+  .questions-container {
+    height: fit-content;
+    width: calc(45vw - 4px);
+
+    min-width: 398px;
+    max-width: 748px;
+
+    margin: 10px 0;
+
+    border: 1px solid #3f3f3f80;
+
+    box-shadow: 0 1px 3px 1px #1f1f1f40;
+
+    background-color: #f9f9f9;
+
+    z-index: 1;
+  }
+}
