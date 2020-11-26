@@ -1,7 +1,7 @@
 .converter-container {
     width: 100%;
 
-    padding: 25px;
+    padding: 10px 25px 10px 15px;
 
     // background-color: #ffffff;
     background-color: #cad6ec;
@@ -19,14 +19,11 @@
 
         border: 1px solid transparent;
 
-        // background-color: #f9f9f9;
-        // background-color: #cad6ec;
-
         .placeholder-video, video {
             width: 100%;
-            height: calc((100vh - 50px - 45px - 4px) * 0.5);
+            height: calc((100vh - 20px - 45px - 4px) * 0.5);
 
-            background-color: #f9f9f9;
+            background-color: #f9f9f925;
 
             box-shadow: 0 1px 3px 1px #1f1f1f40;
             border: 1px solid #3f3f3f80;
@@ -38,27 +35,46 @@
             border: 1px solid #3f3f3f80;
 
             width: 100%;
-            height: calc((100vh - 50px - 45px - 4px) * 0.5 - 4px);
+            height: calc((100vh - 20px - 45px - 4px) * 0.5 - 4px);
         }
         .placeholder-gif {
             width: 100%;
-            height: calc((100vh - 50px - 45px - 4px) * 0.5);
+            height: calc((100vh - 20px - 45px - 4px) * 0.5);
 
-            background-color: #f9f9f9;
+            background-color: #f9f9f925;
 
             box-shadow: 0 1px 3px 1px #1f1f1f40;
             border: 1px solid #3f3f3f80;
+
+            .loading {
+                position: relative;
+
+                margin: 0;
+
+                width: 75px; height: 75px;
+
+                left: 45%; top: 45%;
+
+                transform: translate(-50%, -50%);
+
+                border-radius: 50%;
+                border: 5px solid #ffffff20;
+                border-top-color: #ffffff;
+
+                animation: spin 2s infinite linear;
+            }
         }
+
         img {
             width: 100%;
-            height: calc((100vh - 50px - 45px - 4px) * 0.5);
+            height: calc((100vh - 20px - 45px - 4px) * 0.5);
 
             box-shadow: 0 1px 3px 1px #1f1f1f40;
             border: 1px solid #3f3f3f80;
         }
         .control-panel {
-            min-width: 400px;
-            width: 425px;
+            min-width: 455px;
+            width: 455px;
 
             margin: 0 auto;
 
@@ -68,6 +84,8 @@
 
             span {
                 border: unset;
+
+                color: #1f1f1f;
 
                 height: 23px;
 
@@ -134,8 +152,8 @@
                 position: relative;
 
                 height: 21px;
-                min-width: 35px;
-                width: 35px;
+                min-width: 50px;
+                width: 50px;
 
                 text-align: center;
 

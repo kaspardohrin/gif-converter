@@ -14,7 +14,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function App() {
   const [note_toggle, note_toggle_set] = React.useState<boolean>(false)
-  const [question_toggle, question_toggle_set] = React.useState<boolean>(true)
+  const [question_toggle, question_toggle_set] = React.useState<boolean>(false)
 
   const dispatch = useDispatch()
 
