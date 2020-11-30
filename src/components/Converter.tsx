@@ -84,6 +84,8 @@ export const Converter: React.FC<Props> = () => {
   const convert = async (): Promise<void> => {
     if (!video) return
 
+    if (converting) return
+
     converting_set(true)
 
     await ffmpeg.FS('writeFile', 'test.mp4', await fetchFile(video))

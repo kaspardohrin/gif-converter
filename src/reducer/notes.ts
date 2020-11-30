@@ -10,7 +10,7 @@ const notes_initial = {
 }
 
 type Action = {
-    type: 'ADD_NOTE' | 'REMOVE_NOTE' | 'DISPLAY_NOTE',
+    type: 'ADD_NOTE' | 'REMOVE_NOTE',
     payload: Note,
 }
 
@@ -23,7 +23,7 @@ export const notes_reducer = (state: State = notes_initial, action: Action) => {
         case 'REMOVE_NOTE':
             storage_unset('notes', action.payload)
 
-            return { ...state, notes: [...state.notes.filter(x => x.id !== action.payload.id)] }
+            return { ...state, notes: [...state.notes?.filter(x => x.id !== action.payload.id)] }
         default:
             return state
     }
@@ -32,21 +32,29 @@ export const notes_reducer = (state: State = notes_initial, action: Action) => {
 function storage_get(key: string,) {
     const storage: Array<Note> = JSON.parse(localStorage.getItem(key)!)
 
-    return (storage.length !== 0) ? storage : null
+    return (storage?.length !== 0) ? storage : null
 }
 
 function storage_set(key: string, data: Note,) {
-    const storage_old: Array<Note> = JSON.parse(localStorage.getItem(key)!)
+    const storage_old: Array<Note> = JSON?.parse(localStorage.getItem(key)!)
 
-    const storage_new: string = JSON.stringify([data, ...storage_old,])
+    if (!storage_old) {
+        const storage_new: string = JSON.stringify([data])
 
-    localStorage.setItem(key, storage_new)
+        return localStorage.setItem(key, storage_new)
+    } else {
+        const storage_new: string = JSON.stringify([data, ...storage_old])
+
+        return localStorage.setItem(key, storage_new)
+    }
 }
 
 function storage_unset(key: string, data: Note,) {
     const storage_old: Array<Note> = JSON.parse(localStorage.getItem(key)!)
 
-    const filter = storage_old.filter(x => x.id !== data.id)
+    const filter: Array<Note> = storage_old?.filter(x => x.id !== data.id)
+
+    if (!filter) return null
 
     const storage_new: string = JSON.stringify([...filter])
 
